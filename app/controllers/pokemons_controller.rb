@@ -22,5 +22,12 @@ class PokemonsController < ApplicationController
 
   def pokemon_params
     params.require(:pokemon).permit(:level, :price, :description, :user_id)
+
+  def index
+    @pokemons = Pokemon.all
+  end
+
+  def show
+    @pokemon = Pokemon.find(params[:id])
   end
 end
