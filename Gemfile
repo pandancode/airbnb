@@ -31,7 +31,8 @@ gem 'poke-api-v2'
 # Yilun did not add dot-env, seems to be added below
 # Yilun added json
 gem 'json', '~> 2.6', '>= 2.6.1'
-
+# AMIN ADDED FAKER GEM
+gem 'faker'
 
 
 # Reduces boot times through caching; required in config/boot.rb

@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+charmander = PokeApi.get(pokemon: 'charmander')
 
 # Seeding users, SO guide and also documentation
 # https://stackoverflow.com/questions/12418584/seeding-users-with-devise-in-ruby-on-rails
@@ -32,4 +27,21 @@ puts "Cleaning user database: done"
   puts "Done with creating user #{counter}"
   puts ""
   counter += 1
+end
+
+
+10.times do
+  puts "Start"
+
+  num = 1
+  pkmn = Pokemon.new(
+    level: 100,
+    price: 10,
+    pokemon_name: PokeApi.get(pokemon: 'charmander').name,
+    user_id: num
+  )
+  puts "Gonna save"
+  pkmn.save!
+  puts "end"
+  num += 1
 end
