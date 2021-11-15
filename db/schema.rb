@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2021_11_15_142248) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.float "price"
     t.boolean "completed", default: false
     t.bigint "pokemon_id", null: false
     t.bigint "user_id", null: false
