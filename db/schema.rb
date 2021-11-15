@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_142248) do
     t.string "pokemon_name"
     t.integer "level"
     t.text "description"
+    t.float "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
