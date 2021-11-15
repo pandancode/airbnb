@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 # Yilun added devise gem
 gem 'devise'
+# Yilun added poke-api
+gem 'poke-api-v2'
 
 
 
