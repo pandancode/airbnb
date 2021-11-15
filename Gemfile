@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # Yilun added poke-api
 gem 'poke-api-v2'
+# Yilun did not add dot-env, seems to be added below
+# Yilun added json
+gem 'json', '~> 2.6', '>= 2.6.1'
 
 
 
