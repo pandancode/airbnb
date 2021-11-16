@@ -1,12 +1,13 @@
 class TransactionsController < ApplicationController
   def new
+    # @transaction = Transaction.new
+    @pokemon = Pokemon.find(params[:pokemon_id])
     @transaction = Transaction.new
-    # raise
   end
 
   def create
     @transaction = Transaction.new(transaction_params)
-    @user = User.find(params[:user_id])
+    @user = current_user
     @pokemon = Pokemon.find(params[:pokemon_id])
     @transaction.pokemon = @pokemon
     @transaction.user = @user
