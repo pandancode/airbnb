@@ -1,23 +1,25 @@
+<div class="container">
+  <h1>All Pokemons</h1>
 
-<h1>All Pokemons</h1>
+
+  <div class="container-cards">
+
+  <%@pokemons.each do |pokemon| %>    
+
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2><%= pokemon.pokemon_name %></h2>
+        <p><%= pokemon.description %></p>
+        <p><%= pokemon.price %></p>
+        <p><%= link_to "show", pokemon_path(pokemon) %> </p>
+      </div>
+    </div>
+
+  <% end %>
+
+  </div>
+  
+</div>
 
 
-<table>
-  <tr>
-    <th>Pokemone Name</th>
-    <th>Level</th>
-    <th>Description</th>
-    <th>Price</th>
-  </tr>
-
-<%@pokemons.each do |pokemon| %>
-  <tr>
-    <td><%= pokemon.pokemon_name %></td>
-    <td><%= pokemon.level %></td>
-    <td><%= pokemon.description %></td>
-    <td><%= pokemon.price %></td>
-    <td><%= link_to "show", pokemon_path(pokemon) %></td>
-  </tr>
-<% end %>
-
-</table>
