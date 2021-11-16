@@ -10,7 +10,7 @@ puts "Cleaning user database"
 User.destroy_all
 puts "Cleaning user database: done"
 
-10.times do
+20.times do
   puts "Creating user #{counter}"
   new_user = User.new
   new_user.email = "test#{counter}@test.com"
@@ -29,19 +29,17 @@ puts "Cleaning user database: done"
   counter += 1
 end
 
-
-10.times do
+100.times do
   puts "Start"
+  puts "Creating pokemon"
 
-  num = 1
-  pkmn = Pokemon.new(
+  Pokemon.create(
     level: 100,
     price: 10,
-    pokemon_name: PokeApi.get(pokemon: 'charmander').name,
-    user_id: num
+    pokemon_name: PokeApi.get(pokemon: (1..898).to_a.sample).name,
+    user_id: (1..20).to_a.sample
   )
-  puts "Gonna save"
-  pkmn.save!
+  puts "Creation done"
+  # pkmn.save!
   puts "end"
-  num += 1
 end

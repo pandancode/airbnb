@@ -6,6 +6,11 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
+    raise
+  end
+
+  def new
+    @pokemon = Pokemon.new
   end
 
   def create
@@ -23,5 +28,5 @@ class PokemonsController < ApplicationController
   def pokemon_params
     params.require(:pokemon).permit(:level, :price, :description, :user_id)
   end
- 
+
 end
