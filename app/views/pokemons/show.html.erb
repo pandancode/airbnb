@@ -28,14 +28,14 @@
 </div> %>
 
 <div id="cards">
-
+<%#
 <figure class="card card--normal">
   <div class="card__image-container">
     <img src="https://cdn.bulbagarden.net/upload/thumb/e/e2/133Eevee.png/1200px-133Eevee.png" alt="Eevee" class="card__image">
   </div>
 
   <figcaption class="card__caption">
-    <h1 class="card__name">Eevee</h1>
+    <%# <h1 class="card__name"></h1> %> %>
 <%#
     <h3 class="card__type">
       normal
@@ -467,28 +467,28 @@
   </div>
 
   <figcaption class="card__caption">
-    <h1 class="card__name">Sylveon</h1>
-
+    <h1 class="card__name"><%=@pokemon.pokemon_name%></h1>
+<%#
     <h3 class="card__type">
       fairy
-    </h3>
+    </h3> %>
 
     <table class="card__stats">
       <tbody><tr>
-        <th>HP</th>
-        <td>95</td>
+        <th>Level:</th>
+        <td><%= @pokemon.level %></td>
       </tr>
       <tr>
-        <th>Attack</th>
+        <th>Description:</th>
         <td>65</td>
       </tr>
 
       <tr>
-        <th>Defense</th>
+        <th>Price:</th>
         <td>65</td>
       </tr>
 
-      <tr>
+      <%# <tr>
         <th>Special Attack</th>
         <td>110</td>
       </tr>
@@ -567,7 +567,7 @@
       <h4 class="card__ability">
         <span class="card__label">Hidden Ability</span>
         {{ability2}}
-      </h4>
+      </h4> %>
     </div>
   </figcaption>
 </figure>
