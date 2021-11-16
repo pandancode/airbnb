@@ -25,6 +25,7 @@ class PokemonsController < ApplicationController
   private
 
   def pokemon_params
+   # params.require(:pokemon).permit(:pokemon_name, :level, :price, :description, :user_id)
     params.require(:pokemon).permit(:level, :price, :description, :user_id, :pokemon_id)
   end
 

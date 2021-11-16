@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="add_pokemon">
+        <h3>Add a new Pokemon</h3>
+      </div>
+    </div>
+      <%= simple_form_for @pokemon do |f| %>
+        <%= f.input :pokemon_name %>
+        <%= f.input :level %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.button :submit, class: 'btn-black' %>
+      <% end %>
+  </div>
+</div>
