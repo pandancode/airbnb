@@ -1,0 +1,23 @@
+
+<h1>All Pokemons</h1>
+
+
+<table>
+  <tr>
+    <th>Pokemone Name</th>
+    <th>Level</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+
+<%@pokemons.each do |pokemon| %>
+  <tr>
+    <td><%= pokemon.pokemon_name %></td>
+    <td><%= pokemon.level %></td>
+    <td><%= pokemon.description %></td>
+    <td><%= pokemon.price %></td>
+    <td><%= link_to "show", pokemon_path(pokemon) %></td>
+  </tr>
+<% end %>
+
+</table>
