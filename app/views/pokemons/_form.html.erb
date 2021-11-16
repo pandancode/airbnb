@@ -1,19 +1,15 @@
 <div class="container">
-  <div class="row">
-      <div centre>
-      <%# @import url("stylesheet/components/_btn.scss"); %>
-      <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"> %>
-  Add a new Pokemon
-</div>
+  <div class="row justify-content-center">
+      <div class="add_pokemon">
+        <h3>Add a new Pokemon</h3>
       </div>
-
+    </div>
       <%= simple_form_for @pokemon do |f| %>
         <%= f.input :pokemon_name %>
         <%= f.input :level %>
         <%= f.input :description %>
         <%= f.input :price %>
-        <%= f.submit class: 'btn .btn-black' %>
+        <%= f.button :submit, class: 'btn-black' %>
       <% end %>
-    </div>
   </div>
 </div>
