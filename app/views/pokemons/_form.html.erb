@@ -4,7 +4,7 @@
         <h3>Add a new Pokemon</h3>
       </div>
     </div>
-      <%= simple_form_for @pokemon do |f| %>
+      <%= simple_form_for [@user, @pokemon] do |f| %>
         <%= f.input :pokemon_name, label_html: { class: "row justify-content-center"} %>
         <%= f.input :level, label_html: { class: "row justify-content-center"} %>
         <%= f.input :description, label_html: { class: "row justify-content-center"} %>
@@ -13,3 +13,5 @@
       <% end %>
   </div>
 </div>
+
+# will need to get it from the form file as a partial
