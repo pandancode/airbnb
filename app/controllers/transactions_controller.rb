@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new
-    raise
+    # raise
   end
 
   def create
