@@ -1,0 +1,11 @@
+<h1>Are you sure you want to buy this pokemon</h1>
+
+<%= @pokemon.pokemon_name %>
+<%= @pokemon.level %>
+<%= @pokemon.price %>
+
+<%= simple_form_for [@pokemon, @transaction] do |f| %>
+  			<%= f.submit "Buy Pokemon", class: "btn btn-primary" %>
+		<% end %>
+<%# pokemon_transactions POST   /pokemons/:pokemon_id/transactions(.:format)  transactions#create
+new_pokemon_transaction GET    /pokemons/:pokemon_id/transactions/new(.:format)  transactions#new %>
