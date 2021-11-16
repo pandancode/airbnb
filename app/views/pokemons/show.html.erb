@@ -1,10 +1,12 @@
+<div class="container">
+<div>
+<h1 class="headers-font row justify-content-center"> <%=@pokemon.pokemon_name  %></h1>
 
-<h1 class="body-font"> <%=@pokemon.pokemon_name  %></h1>
+<p class="body-font row justify-content-center">Level: <%= @pokemon.level %></p>
 
-<p>Level: <%= @pokemon.level %></p>
+<p class="body-font row justify-content-center">Price: <%= @pokemon.price %></p>
 
-<p><%= @pokemon.description %></p>
-
-<p>Price: <%= @pokemon.price %></p>
-
- <%# <%= link_to "BUY NOW", %> %>
+<p class="body-font row justify-content-center"><%= @pokemon.description %></p>
+</div>
+ <%# <%= link_to "BUY NOW", %>
+</div>
