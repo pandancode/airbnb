@@ -4,6 +4,8 @@
 
 .container-cards{
   display:flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -15,7 +17,7 @@
 // style add by giorgio
   width: 30%;
   margin: 10px 2px;
-  // 
+  //
   overflow: hidden;
   height: 120px;
   background: white;
@@ -28,12 +30,14 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
+  text-transform: uppercase;
 }
 
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: black;
 }
 
 .card-product p {
@@ -42,9 +46,9 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: black;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
 }
-
