@@ -18,15 +18,14 @@ class PokemonsController < ApplicationController
     if @pokemon.save
       redirect_to pokemon_path(@pokemon)
     else
-      render "new"
+      render :new
     end
   end
 
   private
 
   def pokemon_params
-   # params.require(:pokemon).permit(:pokemon_name, :level, :price, :description, :user_id)
-    params.require(:pokemon).permit(:level, :price, :description, :user_id, :pokemon_id)
+    params.permit(:level, :price, :description, :user_id, :pokemon_id)
   end
 
 end
