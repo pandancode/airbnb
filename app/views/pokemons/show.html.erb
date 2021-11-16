@@ -7,7 +7,7 @@
 
 <p>Price: <%= @pokemon.price %></p>
 
-<%= link_to("BUY PKMN", pokemon_transactions_path([@pokemon, current_user]), method: :post) %>
+<%= link_to("BUY PKMN", new_pokemon_transaction_path([@pokemon, current_user])) %>
 
 
 <%# <%= simple_form_for [@transaction, @pokemon, @user] do |f| %>

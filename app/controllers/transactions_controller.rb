@@ -17,7 +17,7 @@ class TransactionsController < ApplicationController
     @transaction.user = @user
 
     if @transaction.save
-      redirect_to pokemon_transactions_path(@transaction)
+      redirect_to transactions_path
     else
       render :new
     end
