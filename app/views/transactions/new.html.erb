@@ -4,7 +4,7 @@
 <%= @pokemon.level %>
 <%= @pokemon.price %>
 
-<%= simple_form_for [ @user, @pokemon, @transaction ] do |f| %>
+<%= simple_form_for [ @pokemon, @transaction ] do |f| %>
   			<%= f.submit "Submit review", class: "btn btn-primary" %>
 		<% end %>
 <%# pokemon_transactions POST   /pokemons/:pokemon_id/transactions(.:format)  transactions#create
