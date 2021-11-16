@@ -14,7 +14,8 @@ class PokemonsController < ApplicationController
 
   def create
     @pokemon = Pokemon.new(pokemon_params)
-    @pokemon.user = current_user
+    @user = current_user
+    @pokemon.user = @user
     if @pokemon.save
       redirect_to pokemon_path(@pokemon)
     else
@@ -25,7 +26,7 @@ class PokemonsController < ApplicationController
   private
 
   def pokemon_params
-    params.permit(:level, :price, :description, :user_id, :pokemon_id)
+    params.require(:pokemon).permit(:pokemon_name, :level, :description, :price)
   end
 
 end
