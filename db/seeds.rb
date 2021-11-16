@@ -43,5 +43,5 @@ end
   puts "Gonna save"
   pkmn.save!
   puts "end"
-  num += 1
+  num + 1
 end
