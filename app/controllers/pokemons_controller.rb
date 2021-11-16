@@ -8,13 +8,10 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.find(params[:id])
   end
 
-<<<<<<< HEAD
   def new
     @pokemon = Pokemon.new
   end
 
-=======
->>>>>>> 720439bcd3d8a636d511247c62ff93fc1a1bdfd9
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @pokemon.user = current_user
