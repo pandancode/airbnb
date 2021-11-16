@@ -5,10 +5,10 @@
       </div>
     </div>
       <%= simple_form_for @pokemon do |f| %>
-        <%= f.input :pokemon_name %>
-        <%= f.input :level %>
-        <%= f.input :description %>
-        <%= f.input :price %>
+        <%= f.input :pokemon_name, label_html: { class: "row justify-content-center"} %>
+        <%= f.input :level, label_html: { class: "row justify-content-center"} %>
+        <%= f.input :description, label_html: { class: "row justify-content-center"} %>
+        <%= f.input :price, label_html: { class: "row justify-content-center"} %>
         <%= f.button :submit, class: 'btn-black' %>
       <% end %>
   </div>

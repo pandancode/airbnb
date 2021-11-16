@@ -6,7 +6,6 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
-    raise
   end
 
   def new
