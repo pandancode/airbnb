@@ -1,7 +1,11 @@
 class TransactionsController < ApplicationController
+  def index
+    @transactions = Transaction.all
+  end
+
   def new
-    # @transaction = Transaction.new
     @pokemon = Pokemon.find(params[:pokemon_id])
+    @user = current_user
     @transaction = Transaction.new
   end
 
@@ -13,7 +17,7 @@ class TransactionsController < ApplicationController
     @transaction.user = @user
 
     if @transaction.save
-      redirect_to transaction_path(@transaction)
+      redirect_to pokemon_transactions_path(@transaction)
     else
       render :new
     end
@@ -22,6 +26,6 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:pokemon, :user)
+    params.permit(:pokemon, :user)
   end
 end
