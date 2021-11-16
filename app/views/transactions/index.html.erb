@@ -1,5 +1,28 @@
-<h2>Transaction sccess ! Here are all your transactions done</h2>
+<div class="container">
+  <h2>Transaction sccess ! Here are all your transactions done</h2>
 
-<% @transactions.all.each do |transaction| %>
-  <%= transaction %>
-<% end %>
+
+  <table>
+    <tr>
+      <th>Transaction ID</th>
+      <th>Customer First Name</th>
+      <th>Customer Last Name</th>
+      <th>Pokemon</th>
+      <th>Amount(£)</th>
+    </tr>
+
+
+
+    <% @transactions.each do |transaction| %>
+      
+      <tr>
+        <td><%=transaction.id  %></td>
+        <td><%= transaction.user.first_name %></td>
+        <td><%= transaction.user.last_name %></td>
+        <td><%= transaction.pokemon.pokemon_name %></td>
+        <td><%= transaction.pokemon.price %></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
