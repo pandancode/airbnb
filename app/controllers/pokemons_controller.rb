@@ -6,16 +6,22 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
+    authorize @pokemon
   end
 
   def new
     @pokemon = Pokemon.new
+    authorize @pokemon
   end
 
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @user = current_user
     @pokemon.user = @user
+
+    authorize @pokemon
+
+
     if @pokemon.save && @pokemon.pokemon_name != ""
       redirect_to pokemon_path(@pokemon)
     else
