@@ -1,2 +1,59 @@
 // Import page-specific CSS files here.
 @import "home";
+
+h2 {
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+
+.container-cards{
+  display: flex;
+  min-width: 150px;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.show-page-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  width: 30%;
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  border: 3px solid greenyellow;
+}
+
+.card-show {
+  width: 50%;
+}
+
+.card-pokemon img {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.card-description {
+  color: black;
+}
+
+.card-product h2 {
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.card-product p {
+  color: black;
+}

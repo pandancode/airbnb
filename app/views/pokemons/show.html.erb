@@ -1,4 +1,29 @@
-<h1>Single Pokemon</h1>
+<div id="cards">
+<figure class="card card--fairy">
+  <div class="card__image-container">
+    <img src="<%= PokeApi.get(pokemon: @pokemon.pokemon_name.downcase).sprites.front_default %>" alt="Pokemon" class="card__image">
+  </div>
 
+  <figcaption class="card__caption">
+    <h1 class="card__name"><%=@pokemon.pokemon_name%></h1>
 
-<h2><%= %></h2>
+    <table class="card__stats">
+      <tbody><tr>
+        <th>Level:</th>
+        <td><%= @pokemon.level %></td>
+      </tr>
+      <tr>
+        <th>Description:</th>
+        <td><%= @pokemon.description %></td>
+      </tr>
+
+      <tr>
+        <th>Price:</th>
+        <td><%= @pokemon.price %></td>
+      </tr>
+    </div>
+  </figcaption>
+</figure>
+
+<a class="btn-black">
+<%= link_to("Buy Pokemon", new_pokemon_transaction_path([@pokemon, current_user])) %>
