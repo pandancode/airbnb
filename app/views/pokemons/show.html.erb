@@ -2,6 +2,7 @@
 
 <h1 class="body-font"> <%=@pokemon.pokemon_name  %></h1>
 
+<img src="<%= PokeApi.get(pokemon: @pokemon.pokemon_name.downcase).sprites.front_default %>" alt="">
 <p>Level: <%= @pokemon.level %></p>
 <p><%= @pokemon.description %></p>
 
