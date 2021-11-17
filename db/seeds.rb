@@ -10,7 +10,7 @@ puts "Cleaning user database"
 User.destroy_all
 puts "Cleaning user database: done"
 
-20.times do
+3.times do
   puts "Creating user #{counter}"
   new_user = User.new
   new_user.email = "test#{counter}@test.com"
@@ -29,7 +29,7 @@ puts "Cleaning user database: done"
   counter += 1
 end
 
-100.times do
+10.times do
   puts "Start"
   puts "Creating pokemon"
 

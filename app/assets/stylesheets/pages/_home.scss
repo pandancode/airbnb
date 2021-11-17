@@ -1,1 +1,40 @@
 // Specific CSS for your home-page
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(20,20,20);
+  color: white;
+}
+
+.a-link-to {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 1.8rem;
+  background-color: white;
+  color: black;
+  border-radius: 150px;
+}
+
+.a-link-to:hover {
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 0 30px white;
+}
+
+.container-home-page {
+  text-align: center;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+h1 {
+  padding-top: 15%;
+  text-transform: uppercase;
+  margin-bottom: 4.5rem;
+}

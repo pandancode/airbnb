@@ -1,50 +1,47 @@
 // Import page-specific CSS files here.
 @import "home";
 
+h2 {
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
 
 .container-cards{
-  display:flex;
+  display: flex;
+  min-width: 150px;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-
-
-
-
-.card-product {
-// style add by giorgio
+.card-container {
   width: 30%;
-  margin: 10px 2px;
-  // 
   overflow: hidden;
-  height: 120px;
+  height: 200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 20px;
+  border: 3px solid greenyellow;
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+.card-pokemon img {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.card-description {
+  color: black;
 }
 
 .card-product h2 {
-  font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: black;
 }
 
 .card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  color: black;
 }
-
-.card-product .card-product-infos {
-  padding: 16px;
-}
-
