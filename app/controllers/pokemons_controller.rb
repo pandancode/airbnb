@@ -16,7 +16,7 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.new(pokemon_params)
     @user = current_user
     @pokemon.user = @user
-    if @pokemon.save
+    if @pokemon.save && @pokemon.pokemon_name != ""
       redirect_to pokemon_path(@pokemon)
     else
       render :new
