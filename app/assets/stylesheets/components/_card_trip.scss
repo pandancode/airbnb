@@ -137,12 +137,12 @@ h1, h2, h3, h4, h5 {
   //   }
   // }
 
-  // &--dark {
-  //   background: linear-gradient(20deg, rgba(25,25,25,1) 0%, rgba(16,11,50,1) 33%, rgba(92,2,73,1) 100%);
-  //   .card__type {
-  //     background: #5c0249;
-  //   }
-  // }
+  &--dark {
+    background: linear-gradient(20deg, rgba(25,25,25,1) 0%, rgba(16,11,50,1) 33%, rgba(92,2,73,1) 100%);
+    .card__type {
+      background: #5c0249;
+    }
+  }
   // &--grass {
   //   background: linear-gradient(140deg, rgba(196,218,61,1) 0%, rgba(110,127,14,1) 69%, rgba(39,80,9,1) 100%);
 

@@ -7,16 +7,16 @@
       <th>Customer First Name</th>
       <th>Customer Last Name</th>
       <th>Pokemon</th>
-      <th>Amount(£)</th>
+      <th>Price</th>
     </tr>
 
     <% @transactions.each do |transaction| %>
       <tr>
         <td><%= transaction.id  %></td>
         <td><%= transaction.user.first_name %></td>
-        <td><%= transaction.user.last_name %></td>
-        <td><%= transaction.pokemon.pokemon_name %></td>
-        <td><%= transaction.pokemon.price %></td>
+        <td><%= transaction.user.last_name%></td>
+        <td><%= transaction.pokemon.pokemon_name.upcase %></td>
+        <td>£ <%= transaction.pokemon.price %></td>
       </tr>
     <% end %>
 

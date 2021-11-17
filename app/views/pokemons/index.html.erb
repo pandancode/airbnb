@@ -1,24 +1,22 @@
 <div class="container">
-  <h2>Here are all the Pokémon you can buy</h2>
+  <h2>Here are all the Pokémons you can buy</h2>
 
 
   <div class="container-cards">
     <%@pokemons.each do |pokemon| %>
+      <%= link_to pokemon_path(pokemon), class: "link_to_pkmn_show"  do %>
       <div class="card-container">
-      <%= link_to pokemon_path(pokemon) do %>
         <div class="card-pokemon">
           <img src="<%= PokeApi.get(pokemon: pokemon.pokemon_name.downcase).sprites.front_default %>" alt="">
         </div>
-
         <div class="card-description">
-          <h2><%= pokemon.pokemon_name.upcase %></h2>
-          <p><%= pokemon.description %></p>
+          <h4><%= pokemon.pokemon_name.upcase %></h4>
+          <p class="index-cards-descriptions"><%= pokemon.description %></p>
           <p>£<%= pokemon.price %></p>
           <p> </p>
         </div>
       </div>
       <% end %>
-
     <% end %>
   </div>
 
