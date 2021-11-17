@@ -1,23 +1,24 @@
 <div class="container">
-  <h1>All Pokemons</h1>
+  <h2>All Pokemons available to buy</h2>
 
 
   <div class="container-cards">
+    <%@pokemons.each do |pokemon| %>
 
-  <%@pokemons.each do |pokemon| %>
+      <div class="card-container">
+        <div class="card-pokemon">
+          <img src="<%= PokeApi.get(pokemon: pokemon.pokemon_name.downcase).sprites.front_default %>" alt="">
+        </div>
 
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2><%= pokemon.pokemon_name %></h2>
-        <p><%= pokemon.description %></p>
-        <p><%= pokemon.price %></p>
-        <p><%= link_to "show", pokemon_path(pokemon) %> </p>
+        <div class="card-description">
+          <h2><%= pokemon.pokemon_name.upcase %></h2>
+          <p><%= pokemon.description %></p>
+          <p><%= pokemon.price %> £</p>
+          <p><%= link_to "See Pokemon", pokemon_path(pokemon) %> </p>
+        </div>
       </div>
-    </div>
 
-  <% end %>
-
+    <% end %>
   </div>
 
 </div>
