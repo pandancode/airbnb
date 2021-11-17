@@ -7,6 +7,7 @@ class TransactionsController < ApplicationController
     @pokemon = Pokemon.find(params[:pokemon_id])
     @user = current_user
     @transaction = Transaction.new
+    authorize @transaction
   end
 
   def create
@@ -15,6 +16,7 @@ class TransactionsController < ApplicationController
     @pokemon = Pokemon.find(params[:pokemon_id])
     @transaction.pokemon = @pokemon
     @transaction.user = @user
+    authorize @transaction
 
     if @transaction.save
       redirect_to transactions_path
