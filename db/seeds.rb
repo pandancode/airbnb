@@ -1,14 +1,14 @@
 
-charmander = PokeApi.get(pokemon: 'charmander')
+# charmander = PokeApi.get(pokemon: 'charmander')
 
 # Seeding users, SO guide and also documentation
 # https://stackoverflow.com/questions/12418584/seeding-users-with-devise-in-ruby-on-rails
 # https://guides.rubyonrails.org/security.html
-counter = 1
+# counter = 1
 
-puts "Cleaning user database"
-User.destroy_all
-puts "Cleaning user database: done"
+# puts "Cleaning user database"
+# User.destroy_all
+# puts "Cleaning user database: done"
 
 # 3.times do
 #   puts "Creating user #{counter}"
