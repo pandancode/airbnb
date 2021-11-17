@@ -1,7 +1,8 @@
 class PokemonsController < ApplicationController
 
   def index
-    @pokemons = Pokemon.all
+    # @pokemons = Pokemon.all
+    @pokemons= policy_scope(Pokemon)
   end
 
   def show
