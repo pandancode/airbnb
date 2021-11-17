@@ -3,16 +3,26 @@
 
 h2 {
   text-transform: uppercase;
-  padding: 1rem 0;
+  padding: 2rem 0;
+}
+
+.link_to_pkmn_show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.link_to_pkmn_show:hover {
+  text-decoration: none;
 }
 
 .container-cards{
   display: flex;
-  min-width: 150px;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .show-page-container {
@@ -24,15 +34,19 @@ h2 {
 }
 
 .card-container {
-  width: 30%;
-  overflow: hidden;
-  height: 200px;
+  width: 359px;
+  min-width: 359px;
+  height: 220px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 20px;
-  border: 3px solid greenyellow;
+  border: 4px solid rgba(16,11,50,1);
+  padding: 5px;
+}
+
+.card-container:hover {
+  box-shadow: 0 0 15px rgb(255, 255, 255);
 }
 
 .card-show {
@@ -48,12 +62,16 @@ h2 {
   color: black;
 }
 
-.card-product h2 {
+.card-product h4 {
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 10px;
   color: black;
 }
 
 .card-product p {
   color: black;
+}
+
+.index-cards-descriptions {
+  font-size: 12px;
 }
