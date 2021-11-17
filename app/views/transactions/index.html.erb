@@ -1,6 +1,5 @@
 <div class="container">
-  <h2>Transaction sccess ! Here are all your transactions done</h2>
-
+  <h2>Here are all completed transactions</h2>
 
   <table>
     <tr>
@@ -11,12 +10,9 @@
       <th>Amount(£)</th>
     </tr>
 
-
-
     <% @transactions.each do |transaction| %>
-      
       <tr>
-        <td><%=transaction.id  %></td>
+        <td><%= transaction.id  %></td>
         <td><%= transaction.user.first_name %></td>
         <td><%= transaction.user.last_name %></td>
         <td><%= transaction.pokemon.pokemon_name %></td>
