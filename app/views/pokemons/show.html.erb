@@ -1,42 +1,7 @@
-<%# <div class="container">
-<div>
-
-
-
-OLD CODE 
-<img src="<%= PokeApi.get(pokemon: @pokemon.pokemon_name.downcase).sprites.front_default %>" alt="">
-<p>Level: <%= @pokemon.level %></p>
-<p><%= @pokemon.description %></p>
-OLD CODE ENDS
-
-</div>
-
-<a class="btn-black">
-<%= link_to("Buy Pokemon", new_pokemon_transaction_path([@pokemon, current_user])) %>
-<%# </a>
-</div> %>
-
-<%# <%= simple_form_for [@transaction, @pokemon, @user] do |f| %>
-  <%# <%= f.submit %>
-<%# <% end %>
-<%# <div class="container">
-  <h1 class="headers-font row justify-content-center"><%=@pokemon.pokemon_name%></h1>
-  <%# <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <p class="body-font row justify-content-center">Level: <%= @pokemon.level %></p>
-        <%# <p class="body-font row justify-content-center"><%= @pokemon.description %></p>
-        <%# <p class="body-font row justify-content-center"><%= @pokemon.price %></p>
-      <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-    <%# </div>
-  </div>
-</div> %>
-
 <div id="cards">
 <figure class="card card--fairy">
   <div class="card__image-container">
-    <img src="https://cdn.bulbagarden.net/upload/thumb/e/e8/700Sylveon.png/600px-700Sylveon.png" alt="Pokemon" class="card__image">
+    <img src="<%= PokeApi.get(pokemon: @pokemon.pokemon_name.downcase).sprites.front_default %>" alt="Pokemon" class="card__image">
   </div>
 
   <figcaption class="card__caption">
@@ -49,13 +14,16 @@ OLD CODE ENDS
       </tr>
       <tr>
         <th>Description:</th>
-        <td>65</td>
+        <td><%= @pokemon.description %></td>
       </tr>
 
       <tr>
         <th>Price:</th>
-        <td>65</td>
+        <td><%= @pokemon.price %></td>
       </tr>
     </div>
   </figcaption>
 </figure>
+
+<a class="btn-black">
+<%= link_to("Buy Pokemon", new_pokemon_transaction_path([@pokemon, current_user])) %>
