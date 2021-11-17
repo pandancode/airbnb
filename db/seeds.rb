@@ -29,6 +29,10 @@ puts "Cleaning user database: done"
 #   counter += 1
 # end
 
+puts "Destroying all pokemon"
+Pokemon.destroy_all
+puts "Done destroying all pokemon"
+
 30.times do
   counter = 1
   puts "Start creating pokemon #{counter}"
