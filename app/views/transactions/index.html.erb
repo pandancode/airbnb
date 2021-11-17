@@ -4,8 +4,8 @@
   <table>
     <tr>
       <th>Transaction ID</th>
-      <th>Customer First Name</th>
-      <th>Customer Last Name</th>
+      <th>Bougth by</th>
+      <th>Sold by</th>
       <th>Pokemon</th>
       <th>Price</th>
     </tr>
@@ -14,7 +14,7 @@
       <tr>
         <td><%= transaction.id  %></td>
         <td><%= transaction.user.first_name %></td>
-        <td><%= transaction.user.last_name%></td>
+        <td><%= transaction.pokemon.user.first_name %></td>
         <td><%= transaction.pokemon.pokemon_name.upcase %></td>
         <td>£ <%= transaction.pokemon.price %></td>
       </tr>
