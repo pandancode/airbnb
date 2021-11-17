@@ -36,6 +36,7 @@ puts "Cleaning user database: done"
   Pokemon.create(
     level: 100,
     price: 10,
+    description: "beautiful",
     pokemon_name: PokeApi.get(pokemon: (1..898).to_a.sample).name,
     user_id: (1..20).to_a.sample
   )
