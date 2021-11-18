@@ -30,9 +30,6 @@
 <a class="btn-black">
 <%= link_to "Buy Pokemon", new_pokemon_transaction_path([@pokemon, current_user]), class: "btn-buy-pkmn", "data-toggle" => "modal", "data-target" => "#exampleModal" %>
 
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -47,7 +44,7 @@
        <h2 class="text-modal" >Are you sure you want to buy this Pokémon?</h2>
        <h3 class="text-modal"><%= @pokemon.pokemon_name.capitalize %> (level: <%= @pokemon.level %>) for £<%= @pokemon.price %> </h3>
       </div>
-      <div class="modal-footer d-flex justify-content-center">       
+      <div class="modal-footer d-flex justify-content-center">
         <p>
         <%= simple_form_for [@pokemon, @transaction] do |f| %>
           <%= f.submit "Buy now", class: "a-link-to buy-now" %>
