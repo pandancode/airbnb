@@ -17,6 +17,7 @@ class PokemonsController < ApplicationController
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @user = current_user
+    @pokemon.price = @pokemon.price.round(2)
     @pokemon.user = @user
     if @pokemon.save && @pokemon.pokemon_name != ""
       redirect_to pokemon_path(@pokemon)
