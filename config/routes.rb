@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get "transactions", to: "transactions#index"
+  get "search", to: "pokemons#search", alias: :search
   resources :pokemons, only: [:index, :show, :new, :create, :destroy] do
     resources :transactions, only: [:new, :create]
   end
