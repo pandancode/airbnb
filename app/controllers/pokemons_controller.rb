@@ -2,7 +2,7 @@ class PokemonsController < ApplicationController
 
   def index
     # NOTE: order takes anything, objects or arrays alike
-    @pokemons = Pokemon.all.where(sold: false).order("updated_at ASC")
+    @pokemons = Pokemon.all.where(sold: false).order("updated_at DESC")
   end
 
   def show

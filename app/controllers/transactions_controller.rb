@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   def index
-    @transactions = Transaction.all.order("updated_at ASC")
+    @transactions = Transaction.all.order("updated_at DESC")
   end
 
   def new
