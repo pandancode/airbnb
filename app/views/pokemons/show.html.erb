@@ -33,6 +33,9 @@
 <%= link_to 'Back', pokemons_path %>
 </p>
 <%= link_to "Remove", pokemon_path(@pokemon), method: :delete, data: { confirm: "Are you sure?" } %>
+<p>
+<%= link_to 'Edit', edit_pokemon_path %>
+</p>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
