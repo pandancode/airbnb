@@ -11,8 +11,12 @@ class Pokemon < ApplicationRecord
   # validates :description, presence: true
 
   include PgSearch::Model
-  pg_search_scope :search_by_title_and_synopsis,
-    against: [ :pokemon_name, :description ],
+  pg_search_scope :search_by_name_and_description,
+    against: [:pokemon_name, :description],
+    # Below is a dummy that doesn't work anyways because the two lists aren't linked per se
+    # associated_against: {
+    #   pokemon_list: [:name]
+    # },
     using: {
       tsearch: { prefix: true }
     }

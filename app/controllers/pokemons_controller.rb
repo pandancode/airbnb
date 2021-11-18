@@ -32,10 +32,20 @@ class PokemonsController < ApplicationController
       @pokemon.destroy
     else
       flash.alert = "You do not own the pokemon. howeever you can not perform this action"
-    end 
+    end
     redirect_to pokemons_path
   end
-  
+
+  def search
+    if params[:query].present?
+      # note that only the description is being searched now
+      @pokemon_results = Pokemon.search_by_name_and_description(params[:query])
+      # .where(sold: false).order("updated_at DESC")
+      @pokemons = @pokemon_results
+    else
+      @pokemons = Pokemon.all.where(sold: false).order("updated_at DESC")
+    end
+  end
 
   private
 
