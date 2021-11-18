@@ -1,5 +1,4 @@
 class PokemonsController < ApplicationController
-
   def index
     @pokemons = Pokemon.all.where(sold: false)
   end
@@ -16,7 +15,8 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.new(pokemon_params)
     @user = current_user
     @pokemon.user = @user
-    if @pokemon.save && @pokemon.pokemon_name != ""
+    if PokemonList.find(@pokemon.pokemon_name.to_i).present?
+      @pokemon.save
       redirect_to pokemon_path(@pokemon)
     else
       render :new
@@ -26,7 +26,6 @@ class PokemonsController < ApplicationController
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:pokemon_name, :level, :description, :price)
+    params.require(:pokemon).permit(:pokemon_id, :pokemon_name, :level, :description, :price)
   end
-
 end

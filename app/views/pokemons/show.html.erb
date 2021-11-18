@@ -1,11 +1,11 @@
 <div id="cards">
   <figure class="card card--dark">
     <div class="card__image-container">
-      <img src="<%= PokeApi.get(pokemon: @pokemon.pokemon_name.downcase).sprites.front_default %>" alt="Pokemon" class="card__image">
+      <img src="<%= PokeApi.get(pokemon: @pokemon.pokemon_name).sprites.front_default %>" alt="Pokemon" class="card__image">
     </div>
 
     <figcaption class="card__caption">
-      <h2 class="card__name"><%=@pokemon.pokemon_name%></h2>
+      <h2 class="card__name"><%= PokemonList.find(@pokemon.pokemon_name).name%></h2>
 
       <table class="card__stats">
         <tbody><tr>

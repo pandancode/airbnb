@@ -15,7 +15,7 @@
         <td><%= transaction.id  %></td>
         <td><%= transaction.user.first_name %></td>
         <td><%= transaction.pokemon.user.first_name %></td>
-        <td><%= transaction.pokemon.pokemon_name.upcase %></td>
+        <td><%= PokeApi.get(pokemon: transaction.pokemon.pokemon_name.to_i).name.upcase %></td>
         <td>£ <%= transaction.pokemon.price %></td>
       </tr>
     <% end %>
