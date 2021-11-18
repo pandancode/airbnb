@@ -27,5 +27,7 @@
   </figure>
 </div>
 
-<a class="btn-black">
-<%= link_to "Buy Pokemon", new_pokemon_transaction_path([@pokemon, current_user]), class: "btn-buy-pkmn" %>
+<%= link_to "Buy Pokemon", new_pokemon_transaction_path([@pokemon, current_user]), class: "a-link-to buy" %>
+<p>
+<%= link_to 'Back', pokemons_path %>
+</p>

@@ -10,13 +10,15 @@
       <th>Price</th>
     </tr>
 
+    <% counter = 1 %>
     <% @transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.id  %></td>
+        <td><%= counter  %></td>
         <td><%= transaction.user.first_name %></td>
         <td><%= transaction.pokemon.user.first_name %></td>
         <td><%= transaction.pokemon.pokemon_name.upcase %></td>
         <td>£ <%= transaction.pokemon.price %></td>
+        <% counter += 1 %>
       </tr>
     <% end %>
 
