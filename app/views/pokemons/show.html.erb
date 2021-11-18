@@ -27,8 +27,10 @@
   </figure>
 </div>
 
-<a class="btn-black">
-<%= link_to "Buy Pokemon", new_pokemon_transaction_path([@pokemon, current_user]), class: "btn-buy-pkmn", "data-toggle" => "modal", "data-target" => "#exampleModal" %>
+<%= link_to "Buy Pokemon", new_pokemon_transaction_path([@pokemon, current_user]), class: "a-link-to buy", "data-toggle" => "modal", "data-target" => "#exampleModal" %>
+<p>
+<%= link_to 'Back', pokemons_path %>
+</p>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

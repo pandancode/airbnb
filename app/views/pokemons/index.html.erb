@@ -1,7 +1,6 @@
 <div class="container">
   <h2>Here are all the Pokémons you can buy</h2>
 
-
   <div class="container-cards">
     <%@pokemons.each do |pokemon| %>
       <%= link_to pokemon_path(pokemon), class: "link_to_pkmn_show"  do %>
