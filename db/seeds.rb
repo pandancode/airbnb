@@ -33,16 +33,26 @@ puts "Destroying all pokemon"
 Pokemon.destroy_all
 puts "Done destroying all pokemon"
 
+num = 1
+898.times do
+  puts "creating pkmn #{num}"
+  PokemonList.create(
+    name: PokeApi.get(pokemon: num).name.capitalize
+  )
+  num += 1
+end
+
 30.times do
   counter = 1
   puts "Start creating pokemon #{counter}"
   desc = ["My favorite", "My first catch", "Caught in London", "Caught in Paris", "Caught in Tokyo", "Caught in 2018", "Shiny available upon request"]
-
+  rand_pkmn = (1..898).to_a.sample.to_s
   Pokemon.create(
     level: 100,
     price: 10,
     description: desc.sample,
-    pokemon_name: PokeApi.get(pokemon: (1..898).to_a.sample).name,
+    pokemon_name: PokemonList.find(rand_pkmn),
+    # pokemon_name: PokeApi.get(pokemon: (1..898).to_a.sample).name,
     user_id: (1..20).to_a.sample
   )
   puts "Creation done"

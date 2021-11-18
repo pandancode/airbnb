@@ -1,5 +1,4 @@
 class PokemonsController < ApplicationController
-
   def index
     # NOTE: order takes anything, objects or arrays alike
     @pokemons = Pokemon.all.where(sold: false).order("updated_at DESC")
@@ -19,7 +18,8 @@ class PokemonsController < ApplicationController
     @user = current_user
     @pokemon.price = @pokemon.price.round(2)
     @pokemon.user = @user
-    if @pokemon.save && @pokemon.pokemon_name != ""
+    if PokemonList.find(@pokemon.pokemon_name.to_i).present?
+      @pokemon.save
       redirect_to pokemon_path(@pokemon)
     else
       render :new
@@ -40,7 +40,6 @@ class PokemonsController < ApplicationController
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:pokemon_name, :level, :description, :price)
+    params.require(:pokemon).permit(:pokemon_id, :pokemon_name, :level, :description, :price)
   end
-
 end

@@ -3,9 +3,12 @@
       <div class="add_pokemon">
         <h3>Sell a Pokémon</h3>
       </div>
+
     </div>
       <%= simple_form_for [@user, @pokemon] do |f| %>
-        <%= f.input :pokemon_name, label_html: { class: "row justify-content-center"} %>
+        <%# <%= f.input :pokemon_name %>
+        <%# <%= f.input :pokemon_name, :collection => PokemonList.all,  :value_method => :id, :label => "name" %>
+        <%= f.input :pokemon_name, collection: PokemonList.all, input_html: { class: "select2", style: "width: 100%"}, label_html: { class: "row justify-content-center"} %>
         <%= f.input :level, label_html: { class: "row justify-content-center"} %>
         <%= f.input :description, label_html: { class: "row justify-content-center"} %>
         <%= f.input :price, label_html: { class: "row justify-content-center"} %>
@@ -13,3 +16,5 @@
       <% end %>
   </div>
 </div>
+
+<%# <%= f.select :pokemon_name, options_for_select(PokemonList.all.collect {|pkmn| pkmn.name.upcase}, :name), input_html: { class: 'select2' }  %>
