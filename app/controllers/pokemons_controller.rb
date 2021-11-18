@@ -1,10 +1,12 @@
 class PokemonsController < ApplicationController
   def index
-    @pokemons = Pokemon.all.where(sold: false)
+    # NOTE: order takes anything, objects or arrays alike
+    @pokemons = Pokemon.all.where(sold: false).order("updated_at DESC")
   end
 
   def show
     @pokemon = Pokemon.find(params[:id])
+    @transaction = Transaction.new
   end
 
   def new
@@ -14,6 +16,7 @@ class PokemonsController < ApplicationController
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @user = current_user
+    @pokemon.price = @pokemon.price.round(2)
     @pokemon.user = @user
     if PokemonList.find(@pokemon.pokemon_name.to_i).present?
       @pokemon.save
@@ -22,6 +25,17 @@ class PokemonsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @pokemon = Pokemon.find(params[:id])
+    if @pokemon.user == current_user
+      @pokemon.destroy
+    else
+      flash.alert = "You do not own the pokemon. howeever you can not perform this action"
+    end 
+    redirect_to pokemons_path
+  end
+  
 
   private
 
