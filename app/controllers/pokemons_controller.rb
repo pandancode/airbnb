@@ -6,6 +6,7 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
+    @transaction = Transaction.new
   end
 
   def new
