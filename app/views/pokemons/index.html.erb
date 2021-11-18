@@ -1,6 +1,15 @@
 <div class="container">
   <h2>Here are all the Pokémons you can buy</h2>
 
+  <%= form_tag pokemons_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a Pokémon by name or description"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
   <div class="container-cards">
     <%@pokemons.each do |pokemon| %>
       <%= link_to pokemon_path(pokemon), class: "link_to_pkmn_show"  do %>
