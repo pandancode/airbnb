@@ -1,11 +1,13 @@
 class PokemonsController < ApplicationController
 
   def index
-    @pokemons = Pokemon.all.where(sold: false)
+    # NOTE: order takes anything, objects or arrays alike
+    @pokemons = Pokemon.all.where(sold: false).order("updated_at DESC")
   end
 
   def show
     @pokemon = Pokemon.find(params[:id])
+    @transaction = Transaction.new
   end
 
   def new
@@ -15,6 +17,7 @@ class PokemonsController < ApplicationController
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @user = current_user
+    @pokemon.price = @pokemon.price.round(2)
     @pokemon.user = @user
     if @pokemon.save && @pokemon.pokemon_name != ""
       redirect_to pokemon_path(@pokemon)

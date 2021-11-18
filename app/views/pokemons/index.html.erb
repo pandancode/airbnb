@@ -1,7 +1,6 @@
 <div class="container">
   <h2>Here are all the Pokémons you can buy</h2>
 
-
   <div class="container-cards">
     <%@pokemons.each do |pokemon| %>
       <%= link_to pokemon_path(pokemon), class: "link_to_pkmn_show"  do %>
@@ -12,7 +11,7 @@
         <div class="card-description">
           <h4><%= pokemon.pokemon_name.upcase %></h4>
           <p class="index-cards-descriptions"><%= pokemon.description %></p>
-          <p>£<%= pokemon.price %></p>
+          <p>£<%= number_with_precision(pokemon.price, delimiter: ',', precision: 2) %></p>
           <p> </p>
         </div>
       </div>

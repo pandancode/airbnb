@@ -3,20 +3,22 @@
 
   <table>
     <tr>
-      <th>Transaction ID</th>
+      <th>Transaction</th>
       <th>Bougth by</th>
       <th>Sold by</th>
-      <th>Pokemon</th>
+      <th>Pokémon</th>
       <th>Price</th>
     </tr>
 
+    <% counter = 1 %>
     <% @transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.id  %></td>
+        <td><%= counter  %></td>
         <td><%= transaction.user.first_name %></td>
         <td><%= transaction.pokemon.user.first_name %></td>
         <td><%= transaction.pokemon.pokemon_name.upcase %></td>
-        <td>£ <%= transaction.pokemon.price %></td>
+        <td>£ <%= number_with_precision(transaction.pokemon.price, delimiter: ',', precision: 2) %></td>
+        <% counter += 1 %>
       </tr>
     <% end %>
 
