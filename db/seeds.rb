@@ -37,7 +37,7 @@ puts "Done destroying all pokemon"
   counter = 1
   puts "Start creating pokemon #{counter}"
   desc = ["My favorite", "My first catch", "Caught in 2018", "Shiny available upon request"]
-  caught = ["Dublin", "London", "Manchester", "Paris", "Berlin", "Brussels", "Rome", "Milan", "Tokyo", "Chicago", "Toronto", "Glasgow", "Edinburgh"]
+  # caught = ["Dublin", "London", "Manchester", "Paris", "Berlin", "Brussels", "Rome", "Milan", "Tokyo", "Chicago", "Toronto", "Glasgow", "Edinburgh"]
 
   Pokemon.create(
     level: 100,
@@ -45,7 +45,7 @@ puts "Done destroying all pokemon"
     description: desc.sample,
     pokemon_name: PokeApi.get(pokemon: (1..898).to_a.sample).name,
     user_id: (1..20).to_a.sample
-    caught: caught.sample,
+    # caught: caught.sample,
   )
   puts "Creation done"
   counter += 1

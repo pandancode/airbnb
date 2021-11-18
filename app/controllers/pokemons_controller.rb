@@ -23,6 +23,10 @@ class PokemonsController < ApplicationController
     end
   end
 
+  def map
+    index
+  end
+
   private
 
   def pokemon_params
