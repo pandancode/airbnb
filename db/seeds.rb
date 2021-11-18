@@ -51,7 +51,7 @@ end
     level: 100,
     price: 10,
     description: desc.sample,
-    pokemon_name: PokemonList.find(rand_pkmn),
+    pokemon_name: rand_pkmn,
     # pokemon_name: PokeApi.get(pokemon: (1..898).to_a.sample).name,
     user_id: (1..20).to_a.sample
   )
