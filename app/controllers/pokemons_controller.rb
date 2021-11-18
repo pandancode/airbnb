@@ -2,6 +2,12 @@ class PokemonsController < ApplicationController
 
   def index
     @pokemons = Pokemon.all.where(sold: false)
+     @markers = @pokemons.geocoded.map do |pokemon|
+      {
+        lat: pokemon.latitude,
+        lng: pokemon.longitude
+      }
+    end
   end
 
   def show
@@ -21,10 +27,6 @@ class PokemonsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def map
-    index
   end
 
   private
