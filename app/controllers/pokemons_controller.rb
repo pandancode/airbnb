@@ -26,6 +26,17 @@ class PokemonsController < ApplicationController
     end
   end
 
+  def destroy
+    @pokemon = Pokemon.find(params[:id])
+    if @pokemon.user == current_user
+      @pokemon.destroy
+    else
+      flash.alert = "You do not own the pokemon. howeever you can not perform this action"
+    end 
+    redirect_to pokemons_path
+  end
+  
+
   private
 
   def pokemon_params
