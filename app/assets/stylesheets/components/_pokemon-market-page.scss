@@ -1,0 +1,35 @@
+.container-cards {
+  background: rgba(20,20,20,0.3);
+  padding-bottom: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-market-text {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.pokemon-market-cards {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem
+}
+
+.card-container {
+  background: linear-gradient(110deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 20%, rgba(255,255,255,0.9) 30%, rgba(33,13,63,0.5) 100%) !important;
+}
+
+.card-pokemon {
+  margin-left: -0.5rem;
+  transform: scale(1.5);
+}
+
+.card-description {
+  margin-left: 3rem;
+  color: white !important;
+}

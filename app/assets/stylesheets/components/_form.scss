@@ -34,7 +34,6 @@
   border-radius: 200px;
   border: 1px solid black;
   font-weight: bolder;
-
 }
 
 .btn-submit:hover {
@@ -67,19 +66,38 @@
   height: 90vh;
 }
 
+.form-inputs-signin {
+  text-align: center;
+  width: 500px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
 .container-form-signin-up-img {
   width: 55%;
   height: 90vh;
-  background-image: url(red.jpg);
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%),
+    url(red.jpg);
+  // background-image: url(red.jpg);
   background-position: center;
   background-size: cover;
+
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.form-inputs-signup-in {
+.form-inputs-signup {
   display: flex;
   width: 600px;
   gap: 2rem;
@@ -91,4 +109,26 @@
 
 .btn-signup {
   margin-left: -5rem;
+}
+
+.fix-devise-links {
+  padding: 6px 12px !important;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  color: black;
+  border-radius: 200px;
+  border: 1px solid black;
+  font-weight: bolder;
+}
+
+.fix-devise-links:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.added-auto-buttons {
+  display: flex;
+  gap: 0.5rem;
 }
