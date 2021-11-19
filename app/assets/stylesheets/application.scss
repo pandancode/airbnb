@@ -16,6 +16,9 @@
 @import "transaction/index";
 @import "transaction/new";
 
+// SELECT2 MODULE
+@import 'select2/dist/css/select2';
+
 body {
   margin: 0 0;
 }
