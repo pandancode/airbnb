@@ -18,11 +18,12 @@ h2 {
 }
 
 .container-cards{
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   align-items: center;
+  grid-template-columns: 1fr 1fr;
 }
 
 .show-page-container {

@@ -1,17 +1,16 @@
-<div class="container">
-  <h2>Here are all the Pokémons you can buy</h2>
+  <h2>Here are all the Pokémon you can buy</h2>
+
+<div class=" index-container">
 
   <div class="container-cards">
     <%@pokemons.each do |pokemon| %>
       <%= link_to pokemon_path(pokemon), class: "link_to_pkmn_show"  do %>
       <div class="card-container">
         <div class="card-pokemon">
-        <% pkmn_num = PokeApi.get(pokemon: pokemon.pokemon_name.to_i).name %>
-          <img src="<%= PokeApi.get(pokemon: pkmn_num).sprites.front_default %>" alt="">
-          <%# <img src="<%= PokeApi.get(pokemon: pokemon.pokemon_name.downcase).sprites.front_default %>
+          <img src="<%= PokeApi.get(pokemon: pokemon.pokemon_name.downcase).sprites.front_default %>" alt="">
         </div>
         <div class="card-description">
-          <h4><%= pkmn_num.upcase %></h4>
+          <h4><%= pokemon.pokemon_name.upcase %></h4>
           <p class="index-cards-descriptions"><%= pokemon.description %></p>
           <p>£<%= pokemon.price %></p>
           <p> </p>
@@ -19,6 +18,12 @@
       </div>
       <% end %>
     <% end %>
+  </div>
+
+  <div id="map" style="width: 75%; height: 500px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
 </div>

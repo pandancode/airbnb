@@ -33,6 +33,8 @@ gem 'poke-api-v2'
 gem 'json', '~> 2.6', '>= 2.6.1'
 # AMIN ADDED FAKER GEM
 gem 'faker'
+# Sarah added geocoder gem
+gem 'geocoder'
 
 
 # Reduces boot times through caching; required in config/boot.rb
