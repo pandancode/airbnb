@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-home-page">
+<div class="text-home-page">
+  <h1>Which Pokémon will lead you to victory ?</h1>
+  <br>
+  <p>This is a platform where you can buy Pokémons to complete your team and get yourself ready to compete in high elo competitions. </p>
+  <ul class="list-group-home">
+  <p>The concept is really simple ! You have 2 options:</p>
+    <li class="home-list-items">You can buy Pokémons to build your team.</li>
+    <li class="home-list-items">You're done fighting and you want to get money out of your time invested on the games.</li>
+  </ul>
+    <%= link_to "Buy a Pokémon", pokemons_path, class: "a-link-to buy" %>
+    <%= link_to "Sell a Pokémon", new_pokemon_path, class: "a-link-to sell" %>
+  </div>
+  <div class="empty-div-home"></div>
+</div>

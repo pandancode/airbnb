@@ -1,1 +1,100 @@
 // Specific CSS for your home-page
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(20,20,20);
+  overflow-x: hidden;
+  color: white;
+}
+
+.a-link-to {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 150px;
+  line-height: 2em;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.buy:link, .buy:visited {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.sell:link, .sell:visited {
+  background-color: black;
+  color: white;
+}
+
+.a-link-to:hover, .a-link-to:active {
+  text-decoration: none;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.185);
+  opacity: 1;
+  transition: 0.1s;
+}
+
+.container-home-page {
+  width: 106%;
+  height: 90vh;
+  background-image: url(osselait-dark.jpg);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.btn-ghost {
+  color: black;
+  border: 1px solid black;
+  padding: 8px 48px !important;
+  border-radius: 50px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  margin: 10px;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.list-group-home {
+  margin-bottom: 2rem;
+}
+
+.home-list-items {
+  margin-left: 2.5rem;
+}
+
+.img-home {
+  margin: 1rem 0;
+}
+
+.empty-div-home {
+  width: 80%;
+}
+
+.text-home-page {
+  text-align: left;
+  width: 500px;
+  color: black;
+  font-size: 14px;
+  padding: 1.5rem;
+  margin-left: 50px;
+}

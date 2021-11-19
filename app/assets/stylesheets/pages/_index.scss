@@ -1,2 +1,77 @@
 // Import page-specific CSS files here.
 @import "home";
+
+h2 {
+  text-transform: uppercase;
+  padding: 2rem 0;
+}
+
+.link_to_pkmn_show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.link_to_pkmn_show:hover {
+  text-decoration: none;
+}
+
+.container-cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-page-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  width: 359px;
+  min-width: 359px;
+  height: 220px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 7, 181, 0.9);
+  padding: 5px;
+}
+
+.card-container:hover {
+  box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+.card-show {
+  width: 50%;
+}
+
+.card-pokemon img {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.card-description {
+  color: black;
+}
+
+.card-product h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.card-product p {
+  color: black;
+}
+
+.index-cards-descriptions {
+  font-size: 12px;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="add_pokemon">
+        <h3>Edit a Pokémon</h3>
+      </div>
+    </div>
+      <%= simple_form_for [@user, @pokemon] do |f| %>
+        <%= f.input :pokemon_name, label_html: { class: "row justify-content-center"} %>
+        <%= f.input :level, label_html: { class: "row justify-content-center"} %>
+        <%= f.input :description, label_html: { class: "row justify-content-center"} %>
+        <%= f.input :price, label_html: { class: "row justify-content-center"} %>
+        <%= f.button :submit, 'Save Me', class: 'btn-black' %>
+      <% end %>
+  </div>
+</div>
+
+
+
+<%= link_to 'Back', pokemon_path %>

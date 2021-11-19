@@ -1,18 +1,25 @@
 class TransactionsController < ApplicationController
+  def index
+    @transactions = Transaction.all.order("updated_at DESC")
+  end
+
   def new
+    @pokemon = Pokemon.find(params[:pokemon_id])
+    @user = current_user
     @transaction = Transaction.new
-    # raise
   end
 
   def create
     @transaction = Transaction.new(transaction_params)
-    @user = User.find(params[:user_id])
+    @user = current_user
     @pokemon = Pokemon.find(params[:pokemon_id])
     @transaction.pokemon = @pokemon
     @transaction.user = @user
 
     if @transaction.save
-      redirect_to transaction_path(@transaction)
+      @pokemon.sold = true
+      @pokemon.save
+      redirect_to transactions_path
     else
       render :new
     end
@@ -21,6 +28,6 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:pokemon, :user)
+    params.permit(:pokemon, :user)
   end
 end

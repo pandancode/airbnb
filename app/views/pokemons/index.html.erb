@@ -1,26 +1,27 @@
-<h1>All Pokemons</h1>
+<div class="container-cards">
+    <div class="pokemon-market-text">
+      <h2>Here are all the Pokémons you can buy</h2>
+    </div>
 
+    <div class="pokemon-market-cards">
+      <%@pokemons.each do |pokemon| %>
+      <%= link_to pokemon_path(pokemon), class: "link_to_pkmn_show"  do %>
+        <div class="card-container">
+          <div class="card-pokemon">
+            <% pkmn_num = PokeApi.get(pokemon: pokemon.pokemon_name.to_i).name %>
+            <img src="<%= PokeApi.get(pokemon: pkmn_num).sprites.front_default %>" alt="">
+          </div>
 
-<table>
-  <tr>
-    <th>Pokemone Name</th>
-    <th>Level</th>
-    <th>Description</th>
-    <th>Price</th>
-  </tr>
+          <div class="card-description">
+            <h4><%= pkmn_num.upcase %></h4>
+            <p class="index-cards-descriptions"><%= pokemon.description %></p>
+            <p>£<%= number_with_precision(pokemon.price, delimiter: ',', precision: 2) %></p>
+            <p> </p>
+          </div>
 
-<%@pokemons.each do |pokemon| %>
+        </div>
+        <% end %>
+        <% end %>
+    </div>
 
-  <tr>
-    <td><%= pokemon.pokemon_name %></td>
-    <td><%= pokemon.level %></td>
-    <td><%= pokemon.description %></td>
-    <td><%= pokemon.price %></td>
-    <td><%= link_to "show", pokemon_path(pokemon) %></td>
-
-
-  </tr>
-
-<% end %>
-
-</table>
+</div>

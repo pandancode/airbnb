@@ -1,0 +1,31 @@
+<div class="container-transactions">
+  <h2>Here are all completed transactions</h2>
+
+  <div class="img-all-transactions">
+  </div>
+
+  <h2>See which Pokémons are trendy and prepare a counter strategy</h2>
+
+  <table>
+    <tr>
+      <th>Transaction</th>
+      <th>Bougth by</th>
+      <th>Sold by</th>
+      <th>Pokémon</th>
+      <th>Price</th>
+    </tr>
+
+    <% counter = 1 %>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= counter  %></td>
+        <td><%= transaction.user.first_name %></td>
+        <td><%= transaction.pokemon.user.first_name %></td>
+        <td><%= PokeApi.get(pokemon: transaction.pokemon.pokemon_name.to_i).name.upcase %></td>
+        <td>£ <%= number_with_precision(transaction.pokemon.price, delimiter: ',', precision: 2) %></td>
+        <% counter += 1 %>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
