@@ -8,46 +8,47 @@
 
 body {
   background-color: rgb(20,20,20);
+  overflow-x: hidden;
   color: white;
 }
 
 .a-link-to {
   padding: 8px 16px;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1rem;
   border-radius: 150px;
   line-height: 2em;
   opacity: 0.6;
   transition: 0.3s;
 }
 
-.buy {
-  background-color: rgb(70, 233, 30);
+.buy:link, .buy:visited {
+  background-color: white;
   color: black;
+  border: 1px solid black;
 }
 
-.buy:hover {
-  color: black;
-}
-
-.sell {
-  color: white;
-  background-color: rgb(245, 8, 8);
-}
-
-.sell:hover {
+.sell:link, .sell:visited {
+  background-color: black;
   color: white;
 }
 
-.a-link-to:hover {
+.a-link-to:hover, .a-link-to:active {
   text-decoration: none;
-  box-shadow: 0 0 30px white;
-  opacity: 0.8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.185);
+  opacity: 1;
   transition: 0.1s;
 }
 
 .container-home-page {
-  text-align: center;
+  width: 106%;
+  height: 90vh;
+  background-image: url(osselait-dark.jpg);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
 }
 
 .navbar-brand {
@@ -55,18 +56,16 @@ body {
 }
 
 h1 {
-  padding-top: 2%;
   text-transform: uppercase;
-  margin-bottom: 4.5rem;
+  font-size: 30px;
 }
 
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
+  color: black;
+  border: 1px solid black;
+  padding: 8px 48px !important;
   border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
   margin: 10px;
 }
@@ -75,12 +74,27 @@ h1 {
   opacity: 1;
 }
 
+.list-group-home {
+  margin-bottom: 2rem;
+}
+
 .home-list-items {
-  list-style: none;
-  text-align: left;
-  margin-left: 300px;
+  margin-left: 2.5rem;
 }
 
 .img-home {
   margin: 1rem 0;
+}
+
+.empty-div-home {
+  width: 80%;
+}
+
+.text-home-page {
+  text-align: left;
+  width: 500px;
+  color: black;
+  font-size: 14px;
+  padding: 1.5rem;
+  margin-left: 50px;
 }
