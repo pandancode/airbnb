@@ -16,6 +16,10 @@
 @import "components/card_trip";
 @import "transaction/index";
 @import "components/map";
+@import "transaction/new";
+
+// SELECT2 MODULE
+@import 'select2/dist/css/select2';
 
 body {
   margin: 0 0;
