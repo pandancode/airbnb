@@ -1,0 +1,94 @@
+////////////////////////////////////// SELL POKEMON FORM
+
+.container-sell-form {
+  display: flex;
+  align-items: center;
+  background: rgb(32,32,32);
+  background: linear-gradient(90deg, rgba(241, 102, 48, 0.4) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%);
+}
+
+.container-form {
+  padding: 2rem;
+  width: 40%;
+}
+
+.container-form-img {
+  width: 60%;
+  height: 90vh;
+  background-image: url(charizard.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.title-form {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.btn-submit {
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  color: black;
+  border-radius: 200px;
+  border: 1px solid black;
+  font-weight: bolder;
+
+}
+
+.btn-submit:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.50);
+}
+
+.ionicon-icon {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}
+
+
+////////////////////////////////////// SIGN UP FORM
+
+.sign-up-title {
+  margin-left: -5rem;
+}
+
+.container-signup-form {
+  display: flex;
+  align-items: center;
+  background: rgb(32,32,32);
+  background: linear-gradient(90deg, rgba(36, 100, 200, 0.8) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%);
+}
+
+.container-signup-form {
+  padding: 3rem;
+  width: 45%;
+  height: 90vh;
+}
+
+.container-form-signin-up-img {
+  width: 55%;
+  height: 90vh;
+  background-image: url(red.jpg);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-inputs-signup-in {
+  display: flex;
+  width: 600px;
+  gap: 2rem;
+}
+
+.form-signup-half {
+  width: 240px;
+}
+
+.btn-signup {
+  margin-left: -5rem;
+}
