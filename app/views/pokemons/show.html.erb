@@ -52,7 +52,7 @@
         </button>
       </div>
       <div class="modal-body">
-       <h2 class="text-modal" >Are you sure you want to buy this Pokémon ?</h2>
+       <h2 class="text-modal" >Are you sure you want to buy this Pokémon?</h2>
         <img src="<%= PokeApi.get(pokemon: @pokemon.pokemon_name).sprites.front_default %>" alt="Pokemon" class="card__image">
        <h3 class="text-modal"><%= PokeApi.get(pokemon: @pokemon.pokemon_name.to_i).name.upcase %> (level: <%= @pokemon.level %>) for £<%= number_with_precision(@pokemon.price, delimiter: ',', precision: 2) %> </h3>
       </div>
