@@ -28,11 +28,18 @@
 </div>
 
 
-<%= link_to "Buy Pokémon", new_pokemon_transaction_path([@pokemon, current_user]), class: "a-link-to buy", "data-toggle" => "modal", "data-target" => "#exampleModal" %>
+<%= link_to "Buy Pokémon", new_pokemon_transaction_path([@pokemon, current_user]), class: "a-link-to buy btn-submit", "data-toggle" => "modal", "data-target" => "#exampleModal" %>
+<br>
+<%= link_to pokemons_path do %>
+  <ion-icon class="ionicon-icon" name="arrow-undo-outline"></ion-icon>
+<% end %>
+
+
+
+<%# link_to "Remove", pokemon_path(@pokemon), class: "btn-submit", method: :delete, data: { confirm: "Are you sure?" } %>
 <p>
-<%= link_to 'Back', pokemons_path %>
+<%# link_to 'Edit', edit_pokemon_path, class: "btn-submit" %>
 </p>
-<%= link_to "Remove", pokemon_path(@pokemon), method: :delete, data: { confirm: "Are you sure?" } %>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -45,13 +52,14 @@
         </button>
       </div>
       <div class="modal-body">
-       <h2 class="text-modal" >Are you sure you want to buy this Pokémon?</h2>
-       <h3 class="text-modal"><%= @pokemon.pokemon_name.capitalize %> (level: <%= @pokemon.level %>) for £<%= number_with_precision(@pokemon.price, delimiter: ',', precision: 2) %> </h3>
+       <h2 class="text-modal" >Are you sure you want to buy this Pokémon ?</h2>
+        <img src="<%= PokeApi.get(pokemon: @pokemon.pokemon_name).sprites.front_default %>" alt="Pokemon" class="card__image">
+       <h3 class="text-modal"><%= PokeApi.get(pokemon: @pokemon.pokemon_name.to_i).name.upcase %> (level: <%= @pokemon.level %>) for £<%= number_with_precision(@pokemon.price, delimiter: ',', precision: 2) %> </h3>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <p>
         <%= simple_form_for [@pokemon, @transaction] do |f| %>
-          <%= f.submit "Buy now", class: "a-link-to buy-now" %>
+          <%= f.submit "Buy now", class: "a-link-to btn-submit" %>
         <% end %>
         </p>
       </div>

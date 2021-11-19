@@ -26,6 +26,20 @@ class PokemonsController < ApplicationController
     end
   end
 
+  def edit
+    @pokemon = Pokemon.find(params[:id])
+  end
+
+  def update
+    @pokemon = Pokemon.find(params[:id])
+    if @pokemon.user == current_user
+      @pokemon.update(pokemon_params)
+    else
+      flash.alert = "You do not own the pokemon. howeever you can not perform this action"
+    end 
+    redirect_to pokemon_path(@pokemon)
+  end
+
   def destroy
     @pokemon = Pokemon.find(params[:id])
     if @pokemon.user == current_user
