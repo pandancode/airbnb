@@ -1,7 +1,6 @@
-<div class="container-cards">
-    <div class="pokemon-market-text">
-      <h2>Pokémon currently available for purchase</h2>
-    </div>
+<h2>Here are all the Pokémon you can buy</h2>
+
+<div class=" index-container">
 
     <div class="pokemon-market-cards">
       <%@pokemons.each do |pokemon| %>
@@ -23,5 +22,11 @@
         <% end %>
         <% end %>
     </div>
+
+  <div id="map" style="width: 75%; height: 500px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
 </div>

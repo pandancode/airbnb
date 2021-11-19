@@ -1,5 +1,14 @@
 class PokemonsController < ApplicationController
   def index
+    @pokemons = Pokemon.all.where(sold: false)
+    @markers = @pokemons.geocoded.map do |pokemon|
+      {
+        lat: pokemon.latitude,
+        lng: pokemon.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { pokemon: pokemon }),
+        image_url: helpers.asset_url("pokeball.png")
+      }
+    end
     # NOTE: order takes anything, objects or arrays alike
     @pokemons = Pokemon.all.where(sold: false).order("updated_at DESC")
   end
@@ -36,7 +45,7 @@ class PokemonsController < ApplicationController
       @pokemon.update(pokemon_params)
     else
       flash.alert = "You do not own the pokemon. howeever you can not perform this action"
-    end 
+    end
     redirect_to pokemon_path(@pokemon)
   end
 
@@ -46,10 +55,10 @@ class PokemonsController < ApplicationController
       @pokemon.destroy
     else
       flash.alert = "You do not own the pokemon. howeever you can not perform this action"
-    end 
+    end
     redirect_to pokemons_path
   end
-  
+
 
   private
 

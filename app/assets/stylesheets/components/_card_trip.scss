@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5 {
   }
 
   &__stats {
-    margin: 1em 0;
+    margin: 1em 0 ;
     th {
       font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
       text-align: right;
@@ -92,9 +92,13 @@ h1, h2, h3, h4, h5 {
       text-align: center;
       font-weight: bolder;
       background-color: rgba(255, 255, 255, 0);
+      color: black;
     }
 
-  }
+    tr {
+      border-top: transparent;
+      border-bottom: transparent;
+    }
 
   box-shadow: 0px 5px 20px -10px #111111;
 
@@ -166,11 +170,6 @@ h1, h2, h3, h4, h5 {
     }
   }
 
-  position: relative;
-  transition: 0.4s;
-
-}
-
 .card__description {
   padding: 5px;
   height: 160px;
@@ -189,61 +188,4 @@ h1, h2, h3, h4, h5 {
 
 .btn-buy-pkmn:hover {
   text-decoration: none;
-}
-
-.card__image {
-  z-index: 300;
-  margin-top: 2rem;
-  transform: scale(1.8);
-}
-
-.card__caption {
-  height: 68%;
-  position: static;
-}
-
-.btn-submit:hover {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.50);;
-}
-
-.card__name {
-  margin-top: 2rem;
-  font-size: 2rem;
-  padding: 0;
-}
-
-// MODAL WINDOW
-
-.modal-content {
-  background: rgb(20,20,20);
-  background-position: center;
-  background-size: cover;
-  border: 1px solid white;
-  border-radius: 35%;
-
-  color: white !important;
-}
-
-
-
-.text-modal {
-color: white;
-font-size: 1.1rem;
-}
-
-.text-modal:first-child {
-  margin-top: -2rem;
-  padding: 0 !important;
-}
-
-.text-modal:last-child {
-  margin-top: 3rem;
-}
-
-.close {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.close:hover {
-  color: rgb(255, 255, 255);
 }
