@@ -29,31 +29,54 @@
 #   counter += 1
 # end
 
+
+puts "Destroying all transactions"
+Transaction.destroy_all
+puts "Done destroying all pokemon"
+
 puts "Destroying all pokemon"
 Pokemon.destroy_all
 puts "Done destroying all pokemon"
 
-num = 1
-898.times do
-  puts "creating pkmn #{num}"
-  PokemonList.create(
-    name: PokeApi.get(pokemon: num).name.capitalize
-  )
-  num += 1
-end
+puts "Destroying all users"
+User.destroy_all
+puts "Done destroying all pokemon"
 
-30.times do
-  counter = 1
+puts "Creating user 1 (Team Rocket) to sell seeded Pokemon"
+  new_user = User.new
+  new_user.email = "team@rocket.com"
+  # Don't use encrypted_password, this works
+  new_user.password = "111111"
+  new_user.first_name = "Team"
+  new_user.last_name = "Rocket"
+  new_user.phone_number = "00000001"
+  puts "Is the user valid? #{new_user.valid?}"
+  new_user.save!
+puts "Done creating user 1 (Team Rocket)"
+
+# Create the below list only once
+# num = 1
+# 898.times do
+#   puts "creating pkmn #{num}"
+#   PokemonList.create(
+#     name: PokeApi.get(pokemon: num).name.capitalize
+#   )
+#   num += 1
+# end
+
+counter = 1
+
+10.times do
   puts "Start creating pokemon #{counter}"
-  desc = ["My favorite", "My first catch", "Caught in London", "Caught in Paris", "Caught in Tokyo", "Caught in 2018", "Shiny available upon request"]
-  rand_pkmn = (1..898).to_a.sample.to_s
+  desc = ["My favorite shiny", "My first shiny", "Caught in London", "Caught in Paris", "Caught in Tokyo", "Caught in NYC", "Shiny available upon request"]
+  # rand_pkmn = (1..151).to_a.sample
   Pokemon.create(
     level: 100,
     price: 10,
     description: desc.sample,
-    pokemon_name: rand_pkmn,
-    # pokemon_name: PokeApi.get(pokemon: (1..898).to_a.sample).name,
-    user_id: (1..20).to_a.sample
+    # pokemon_name: rand_pkmn,
+    pokemon_name: PokeApi.get(pokemon: (1..151).to_a.sample).name.capitalize,
+    user_id: new_user.id
   )
   puts "Creation done"
   counter += 1

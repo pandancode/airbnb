@@ -18,7 +18,9 @@ class PokemonsController < ApplicationController
     @user = current_user
     @pokemon.price = @pokemon.price.round(2)
     @pokemon.user = @user
-    if PokemonList.find(@pokemon.pokemon_name.to_i).present?
+    # The below resets the pokedex number spat out from simpleform into the pokemon name again
+    @pokemon.pokemon_name = PokemonList.find(@pokemon.pokemon_name).name
+    if PokemonList.where(name: @pokemon.pokemon_name).present?
       @pokemon.save
       redirect_to pokemon_path(@pokemon)
     else
@@ -36,7 +38,7 @@ class PokemonsController < ApplicationController
       @pokemon.update(pokemon_params)
     else
       flash.alert = "You do not own the pokemon. howeever you can not perform this action"
-    end 
+    end
     redirect_to pokemon_path(@pokemon)
   end
 

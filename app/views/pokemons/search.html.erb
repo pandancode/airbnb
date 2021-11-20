@@ -1,33 +1,38 @@
-<div class="container">
-  <h2>Here are all the Pokémons you can buy</h2>
-
-  <%= form_tag search_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a Pokémon by name or description"
-    %>
-    <%= submit_tag "Search", class: "d-none" %>
-  <% end %>
 
   <div class="container-cards">
-    <%@pokemons.each do |pokemon| %>
-      <%= link_to pokemon_path(pokemon), class: "link_to_pkmn_show"  do %>
-      <div class="card-container">
-        <div class="card-pokemon">
-        <% pkmn_num = PokeApi.get(pokemon: pokemon.pokemon_name.to_i).name %>
-          <img src="<%= PokeApi.get(pokemon: pkmn_num).sprites.front_default %>" alt="">
-          <%# <img src="<%= PokeApi.get(pokemon: pokemon.pokemon_name.downcase).sprites.front_default %>
-        </div>
-        <div class="card-description">
-          <h4><%= pkmn_num.upcase %></h4>
-          <p class="index-cards-descriptions"><%= pokemon.description %></p>
-          <p>£<%= pokemon.price %></p>
-          <p> </p>
-        </div>
-      </div>
+    <div class="pokemon-market-text">
+      <h2>Here are all the Pokémons you can buy</h2>
+    </div>
+
+    <div style="width: 80%">
+      <%= form_tag search_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Pokémon  by name or description"
+        %>
+        <%= submit_tag "Search", class: "d-none" %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+
+    <div class="pokemon-market-cards">
+      <%@pokemons.each do |pokemon| %>
+      <%= link_to pokemon_path(pokemon), class: "link_to_pkmn_show"  do %>
+        <div class="card-container">
+          <div class="card-pokemon">
+            <img src="<%= PokeApi.get(pokemon: pokemon.pokemon_name.downcase).sprites.front_default %>" alt="">
+          </div>
+
+          <div class="card-description">
+            <h4><%= pokemon.pokemon_name %></h4>
+            <p class="index-cards-descriptions"><%= pokemon.description %></p>
+            <p>£<%= number_with_precision(pokemon.price, delimiter: ',', precision: 2) %></p>
+            <p> </p>
+          </div>
+
+        </div>
+        <% end %>
+        <% end %>
+    </div>
 
 </div>
