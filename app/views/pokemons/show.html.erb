@@ -25,21 +25,18 @@
       </div>
     </figcaption>
   </figure>
+
+  <div class="cta-show">
+    <%= link_to "Buy Pokémon", new_pokemon_transaction_path([@pokemon, current_user]), class: "a-link-to buy btn-submit", "data-toggle" => "modal", "data-target" => "#exampleModal" %>
+    <%= link_to pokemons_path do %>
+      <ion-icon class="ionicon-icon back-icon" name="arrow-undo-outline"></ion-icon>
+    <% end %>
+  </div>
 </div>
 
 
-<%= link_to "Buy Pokémon", new_pokemon_transaction_path([@pokemon, current_user]), class: "a-link-to buy btn-submit", "data-toggle" => "modal", "data-target" => "#exampleModal" %>
-<br>
-<%= link_to pokemons_path do %>
-  <ion-icon class="ionicon-icon" name="arrow-undo-outline"></ion-icon>
-<% end %>
-
-
-
 <%# link_to "Remove", pokemon_path(@pokemon), class: "btn-submit", method: :delete, data: { confirm: "Are you sure?" } %>
-<p>
 <%# link_to 'Edit', edit_pokemon_path, class: "btn-submit" %>
-</p>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

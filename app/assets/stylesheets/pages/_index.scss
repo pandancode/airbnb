@@ -17,12 +17,22 @@ h2 {
   text-decoration: none;
 }
 
+.container-container {
+  background: rgb(51,19,99);
+  background: linear-gradient(90deg, rgba(51,19,99,0.5) 5%, rgba(20, 20, 20, 1) 30%, rgba(20, 20, 20, 1) 50%, rgba(20, 20, 20, 1) 70%, rgba(51,19,99,0.5) 95%);
+}
+
 .container-cards{
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.index-search-bar {
+  margin-bottom: 2rem;
 }
 
 .show-page-container {

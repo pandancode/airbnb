@@ -75,7 +75,7 @@ counter = 1
     price: 10,
     description: desc.sample,
     # pokemon_name: rand_pkmn,
-    pokemon_name: PokeApi.get(pokemon: (1..151).to_a.sample).name.capitalize,
+    pokemon_name: PokeApi.get(pokemon: (1..898).to_a.sample).name.capitalize,
     user_id: new_user.id
   )
   puts "Creation done"

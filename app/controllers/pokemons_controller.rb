@@ -33,7 +33,7 @@ class PokemonsController < ApplicationController
   end
 
   def update
-    @pokemon = Pokemon.find(params[:id])   
+    @pokemon = Pokemon.find(params[:id])
     if @pokemon.user == current_user
       @pokemon.update(pokemon_params)
     else
