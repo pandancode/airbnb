@@ -5,6 +5,7 @@
           <%= f.input :pokemon_name, collection: PokemonList.all, input_html: { class: "select2", style: "width: 100%"}, label_html: { class: "row justify-content-center"} %>
           <%= f.input :level, label_html: { class: "row justify-content-center"} %>
           <%= f.input :description, label_html: { class: "row justify-content-center"} %>
+          <%= f.input :address, label_html: { class: "row justify-content-center"} %>
           <%= f.input :price, label_html: { class: "row justify-content-center"} %>
           <%= f.button :submit, 'Sell me now !', class: 'btn-submit' %>
         <% end %>

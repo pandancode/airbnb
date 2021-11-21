@@ -18,7 +18,9 @@ class PokemonsController < ApplicationController
     @user = current_user
     @pokemon.price = @pokemon.price.round(2)
     @pokemon.user = @user
-    if PokemonList.find(@pokemon.pokemon_name.to_i).present?
+    # The below resets the pokedex number spat out from simpleform into the pokemon name again
+    @pokemon.pokemon_name = PokemonList.find(@pokemon.pokemon_name).name
+    if @pokemon.valid?
       @pokemon.save
       redirect_to pokemon_path(@pokemon)
     else
@@ -35,8 +37,8 @@ class PokemonsController < ApplicationController
     if @pokemon.user == current_user
       @pokemon.update(pokemon_params)
     else
-      flash.alert = "You do not own the pokemon. however you can not edit this action"
-    end 
+      flash.alert = "You do not own the pokemon. Therefore, you cannot perform this action!"
+    end
     redirect_to pokemon_path(@pokemon)
   end
 
@@ -45,15 +47,33 @@ class PokemonsController < ApplicationController
     if @pokemon.user == current_user
       @pokemon.destroy
     else
-      flash.alert = "You do not own the pokemon. however you can not delete this action"
-    end 
+      flash.alert = "You do not own the pokemon. Therefore, you cannot perform this action!"
+    end
     redirect_to pokemons_path
   end
-  
+
+  def search
+    if params[:query].present?
+      # note that only the description is being searched now
+      @pokemon_results = Pokemon.search_by_name_and_description(params[:query])
+      # .where(sold: false).order("updated_at DESC")
+      @pokemons = @pokemon_results
+    else
+      @pokemons = Pokemon.all.where(sold: false).order("updated_at DESC")
+    end
+      @markers = @pokemons.geocoded.map do |pokemon|
+        {
+          lat: pokemon.latitude,
+          lng: pokemon.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { pokemon: pokemon }),
+          image_url: helpers.asset_url("pokeball.png")
+      }
+      end
+  end
 
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:pokemon_id, :pokemon_name, :level, :description, :price)
+    params.require(:pokemon).permit(:pokemon_id, :pokemon_name, :level, :description, :price, :address)
   end
 end

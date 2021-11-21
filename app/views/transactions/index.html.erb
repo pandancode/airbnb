@@ -21,7 +21,7 @@
         <td><%= counter  %></td>
         <td><%= transaction.user.first_name %></td>
         <td><%= transaction.pokemon.user.first_name %></td>
-        <td><%= PokeApi.get(pokemon: transaction.pokemon.pokemon_name.to_i).name.upcase %></td>
+        <td><%= transaction.pokemon.pokemon_name %></td>
         <td>£ <%= number_with_precision(transaction.pokemon.price, delimiter: ',', precision: 2) %></td>
         <% counter += 1 %>
       </tr>
