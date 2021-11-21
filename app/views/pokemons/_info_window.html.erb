@@ -1,0 +1,6 @@
+<div>
+  <img src="<%= PokeApi.get(pokemon: pokemon.pokemon_name.downcase).sprites.front_default %>" alt="">
+  <h4><%= pokemon.pokemon_name %></h4>
+  <p>Level: <%= pokemon.level %></p>
+  <p>Price: £<%= number_with_precision(pokemon.price, delimiter: ',', precision: 2) %></p>
+</div>
