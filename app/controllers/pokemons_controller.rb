@@ -33,11 +33,11 @@ class PokemonsController < ApplicationController
   end
 
   def update
-    @pokemon = Pokemon.find(params[:id])
+    @pokemon = Pokemon.find(params[:id])   
     if @pokemon.user == current_user
       @pokemon.update(pokemon_params)
     else
-      flash.alert = "You do not own the pokemon. howeever you can not perform this action"
+      flash.alert = "You do not own the pokemon. Therefore, you cannot perform this action!"
     end
     redirect_to pokemon_path(@pokemon)
   end
@@ -47,7 +47,7 @@ class PokemonsController < ApplicationController
     if @pokemon.user == current_user
       @pokemon.destroy
     else
-      flash.alert = "You do not own the pokemon. howeever you can not perform this action"
+      flash.alert = "You do not own the pokemon. Therefore, you cannot perform this action!"
     end
     redirect_to pokemons_path
   end
