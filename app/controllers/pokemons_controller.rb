@@ -20,7 +20,7 @@ class PokemonsController < ApplicationController
     @pokemon.user = @user
     # The below resets the pokedex number spat out from simpleform into the pokemon name again
     @pokemon.pokemon_name = PokemonList.find(@pokemon.pokemon_name).name
-    if PokemonList.where(name: @pokemon.pokemon_name).present?
+    if @pokemon.valid?
       @pokemon.save
       redirect_to pokemon_path(@pokemon)
     else
@@ -61,11 +61,17 @@ class PokemonsController < ApplicationController
     else
       @pokemons = Pokemon.all.where(sold: false).order("updated_at DESC")
     end
+      @markers = @pokemons.geocoded.map do |pokemon|
+        {
+          lat: pokemon.latitude,
+          lng: pokemon.longitude
+        }
+      end
   end
 
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:pokemon_id, :pokemon_name, :level, :description, :price)
+    params.require(:pokemon).permit(:pokemon_id, :pokemon_name, :level, :description, :price, :address)
   end
 end
