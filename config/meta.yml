@@ -1,4 +1,4 @@
 meta_product_name: "Pokemon B&B"
 meta_title: "Pokemon B&B - Sell, buy and trade your Pokémons !"
 meta_description: "This is a platform on which you can buy, sell and trade your pokémon. Just create an offer and wait for someone to buy it !"
-meta_image: "osselait-dark.png" # should exist in `app/assets/images/`
+meta_image: "osselait-dark.jpg" # should exist in `app/assets/images/`
