@@ -16,12 +16,14 @@ class PokemonsController < ApplicationController
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @user = current_user
-    @pokemon.price = @pokemon.price.round(2)
     @pokemon.user = @user
     # The below resets the pokedex number spat out from simpleform into the pokemon name again
-    @pokemon.pokemon_name = PokemonList.find(@pokemon.pokemon_name).name
-    if @pokemon.valid?
+
+    # if @pokemon.valid? && @pokemon.pokemon_name != "" && !@pokemon.price.nil? && @pokemon.address != ""
+    if @pokemon.pokemon_name != "" && !@pokemon.price.nil? && @pokemon.address != "" && !@pokemon.level.nil?
       @pokemon.save
+      @pokemon.pokemon_name = PokemonList.find(@pokemon.pokemon_name).name
+      @pokemon.price = @pokemon.price.round(2)
       redirect_to pokemon_path(@pokemon)
     else
       render :new
