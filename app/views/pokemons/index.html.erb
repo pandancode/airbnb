@@ -1,17 +1,17 @@
-
+<div class="container-container">
   <div class="container-cards">
     <div class="pokemon-market-text">
       <h2>Pokémon currently available for purchase</h2>
     </div>
 
-    <div style="width: 80%">
+    <div style="width: 70%" class="index-search-bar">
       <%= form_tag search_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Find a Pokémon  by name or description"
         %>
-        <%= submit_tag "Search", class: "d-none" %>
+        <%= submit_tag "Search", class: "d-none", remote: true %>
       <% end %>
     </div>
 
@@ -33,6 +33,5 @@
         </div>
         <% end %>
         <% end %>
-    </div>
-
+  </div>
 </div>
