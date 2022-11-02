@@ -53,8 +53,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
-  # Yilun adding rspec
-  gem 'rspec-rails', '~> 6.0.0'
+  # Yilun adding rspec. Note that the latest is 6.0.0 which creates a bunch of actionpack dependency issues, hence
+  # I picked 5.0.0 which is OK for now
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
