@@ -56,6 +56,8 @@ group :development, :test do
   # Yilun adding rspec. Note that the latest is 6.0.0 which creates a bunch of actionpack dependency issues, hence
   # I picked 5.0.0 which is OK for now
   gem 'rspec-rails', '~> 5.0.0'
+  # Yilun adding simplecov
+  gem 'simplecov', require: false
 end
 
 group :development do
